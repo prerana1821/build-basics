@@ -3,56 +3,94 @@ const btn = document.querySelector('#btn');
 const output = document.querySelector('#output');
 
 btn.addEventListener('click', function() {
-    // let date = birthDate.value;
+    let date = birthDate.value;
     // console.log(date);
-    // let formats = dateFormat(date);
-    // console.log(formats);
-    let formats = ['123', '190', '021', '876'];
-    // let formats = ['123', '223', '121', '876'];
-    // console.log(output.value);
-    // formats.forEach(date => {
-    //     // console.log(date);
-    //     //  palindromeNum(date);
-    //     if (palindromeNum(date)) {
-    //         console.log('True');
-    //         output.innerText = 'Palindrome';
-    //         return;
-    //     }
-    //     // else {
-    //     //     console.log('false');
-    //     // }
-    // });
+    if (date === '') {
+        alert('Please, Enter your birthdate!')
+    } else {
+        let formats = dateFormat(date);
+        // console.log(formats);
+        // let formats = ['123', '190', '021', '876'];
+        // let formats = ['123', '223', '121', '876'];
+        // console.log(output.value);
+        // formats.forEach(date => {
+        //     // console.log(date);
+        //     //  palindromeNum(date);
+        //     if (palindromeNum(date)) {
+        //         console.log('True');
+        //         output.innerText = 'Palindrome';
+        //         return;
+        //     }
+        //     // else {
+        //     //     console.log('false');
+        //     // }
+        // });
 
-    for (let i = 0; i < formats.length; i++) {
-        if (palindromeNum(formats[i])) {
-            // console.log(formats[i]);
-            console.log('True');
-            output.innerText = 'Palindrome';
+        for (let i = 0; i < formats.length; i++) {
+            if (palindromeNum(formats[i])) {
+                console.log('True');
+                output.innerText = 'Palindrome';
+            }
         }
-        // else {
-        //     console.log('false');
-        //     output.innerText = 'Not Palindrome';
-        // }
+
+        if (output.innerText === undefined || output.innerText.indexOf('a') === -1) {
+            // console.log('Hello');
+            let nearest = nearestPalindromeNum(formats[0]);
+            console.log(formats[0]);
+            console.log(nearest);
+            let nearestString = nearest.toString();
+            // let nearestYear = nearestString.slice(0, 4);
+            // let nearestMonth = nearestString.slice(4, 6);
+            // let nearestDate = nearestString.slice(6, 8);
+
+            let dateTemp1 = `${formats[0].slice(0, 4)}/${formats[0].slice(4, 6)}/${formats[0].slice(6, 8)}`;
+            console.log(dateTemp1);
+
+            let dateTemp2 = `${nearestString.slice(0, 4)}/${nearestString.slice(4, 6)}/${nearestString.slice(6, 8)}`;
+            console.log(dateTemp2);
+
+
+            let date1 = new Date(dateTemp1);
+            let date2 = new Date(dateTemp2);
+            let diffTime = Math.abs(date2 - date1);
+            let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            console.log(diffDays + " days");
+
+            output.innerText = `${dateTemp2} ${diffDays} Days`;
+
+        }
+
     }
 
-
-    if (output.innerText === undefined || output.innerText.indexOf('') === -1) {
-        // if (typeof(output.value) === undefined) {
-        console.log('19');
-        console.log(output.value);
-        console.log('Hello');
-        // }
-        // console.log('Hii');
-
-    }
-    // else if (output.value !== undefined) {
-    //     console.log(output.value);
-    //     console.log('Hello');
-    // }
 
 });
 
 // palindromeNum(1001);
+
+function nearestPalindromeNum(num) {
+    let low = num - 1;
+    // console.log(low);
+    while (!palindromeNum(low)) {
+        low = low - 1;
+    }
+    // console.log(low);
+
+    let high = parseInt(num) + 1;
+    // console.log(high);
+    while (!palindromeNum(high)) {
+        high = high + 1;
+    }
+    // console.log(high);
+
+    if (low < high) {
+        console.log(low);
+        return low;
+    } else {
+        console.log(high);
+        return high;
+    }
+
+}
 
 function palindromeNum(number) {
     let reverse = 0;
