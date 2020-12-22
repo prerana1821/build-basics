@@ -5,20 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Is your Birthday Lucky ?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.google.com/s2/u/0/favicons?domain=prerana-nawar.netlify.com">
 </head>
 
 <body>
 
-    <h1>Is your Birthday Lucky ?</h1>
+    <section>
 
-    <input type="date" name="" id="birthdate">
+        <div id="left-div">
+            <h1>Is your Birthday Lucky ?</h1>
+            <p>Enter your Birth date:</p>
+            <input type="date" name="" id="birthdate">
+            <p>Enter your Lucky Number:</p>
+            <input type="number" name="" id="lucky-num">
+            <div id="btns">
+                <button id="btn">Enter</button>
+                <button id="tweet"><img src="images/tweet.svg" alt=""></button>
+                <button id="reset"><img src="images/reset.svg" alt=""></button>
+            </div>
 
-    <input type="number" name="" id="lucky-num">
+            <div id="output"></div>
+        </div>
 
-    <button id="btn">Enter</button>
+        <div id="right-div">
+            <img src="images/gift.png" alt="">
+        </div>
 
-    <div id="output"></div>
 
+    </section>
+    <div id="policy-card">This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the Site. We use your Personal Information only for providing and improving the Site. By using the Site, you agree
+        to the collection and use of information in accordance with this policy.</div>
+    <footer>
+
+        <ul class="list-unordered inline-list">
+            <li>
+                <a class="links" href="mailto: prerananw1@gmail.com"><img src="images/gmail.svg" alt=""></a>
+            </li>
+
+            <li>
+                <a class="links" href="https://github.com/prerana1821"><img src="images/github.svg" alt=""></a>
+            </li>
+
+            <a class="links" href="https://twitter.com/NawarPrerana"><img src="images/twitter.svg" alt=""></a>
+            </li>
+            <li>
+                <a class="links" href="https://www.linkedin.com/in/prerana-nawar-4890b41ab/"><img src="images/linkedin.svg" alt=""></a>
+            </li>
+            <li>
+                <a class="links" href="https://www.instagram.com/_prer.ana_/"><img src="images/instagram.svg" alt=""></a>
+            </li>
+        </ul>
+        <p>© | 2020 | preCODES | <span id="policy">Privacy Policy</span></p>
+
+    </footer>
+
+
+    <!-- <img src="wave-1.svg" alt=""> -->
     <script src="app.js"></script>
 
 </body>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient">
+      <stop offset="0.05" stop-color="#9900efff"/>
+      <stop offset="0.95" stop-color="#32ded4ff"/>
+    </linearGradient>
+  </defs>
+  <path d="M 1.36 499.885 C 0.578 504.446 100.918 478.461 86.678 397.336 C 67.457 287.835 1.98 240.766 43.735 195.654 C 85.49 150.542 183.626 240.612 203.141 147.025 C 211.107 108.822 222.915 59.162 292.802 28.711 C 362.689 -1.74 497.857 53.575 498.844 187.753 L 496.989 499.885 L 1.36 499.885 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" style=""/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+</svg>
