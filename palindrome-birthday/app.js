@@ -57,12 +57,12 @@ function nearestPalindromeNum(num) {
     // console.log(sum);
     // console.log(sum.slice(4, 6));
     // console.log(sum.slice(6, 8));
-    // if (sum.slice(4, 6) <= 12 && sum.slice(6, 8) <= 31) {
-    //     return sum;
-    // } else {
-    //     nearestPalindromeNum(sum);
-    // }
-    return sum;
+    if (sum.slice(4, 6) <= 12 && sum.slice(6, 8) <= 31) {
+        return sum;
+    } else {
+        nearestPalindromeNum(sum);
+    }
+    // return sum;
     // return +(first + reversed);
     // validate(first + reversed);
 }
