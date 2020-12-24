@@ -1,15 +1,29 @@
 const bill = document.querySelector('#bill-amt');
 const cash = document.querySelector('#cash');
+const btnNext = document.querySelector('#btn-next');
 const btnCheck = document.querySelector('#btn-check');
-const noOfNotes = document.querySelectorAll('.noOfNotes')
-
+const noOfNotes = document.querySelectorAll('.noOfNotes');
+const checkDiv = document.querySelector('#cash-div');
+const returnChange = document.querySelector('.changeReturn');
+const loader = document.querySelector('#loading');
 
 let notes = [2000, 500, 100, 20, 10, 5, 1];
 let returnNotes = [];
+let billAmt;
+let cashAmt;
+btnNext.addEventListener('click', function() {
+    // loader.className = "show";
+    billAmt = bill.value;
+    if (billAmt === '') {
+        alert('Please, Enter Billing Amount!');
+    } else {
+        checkDiv.className = "show";
+    }
+})
 
 btnCheck.addEventListener('click', function() {
-    let billAmt = bill.value;
-    let cashAmt = cash.value;
+    billAmt = bill.value;
+    cashAmt = cash.value;
     for (const notes of noOfNotes) {
         notes.innerText = '';
     }
@@ -18,11 +32,17 @@ btnCheck.addEventListener('click', function() {
         alert('Please, Enter Billing Amount!');
     } else if (cashAmt === '') {
         alert('Please, Enter Cash Amount!');
-    } else if (billAmt < cashAmt) {
+    } else if (billAmt > cashAmt) {
         alert('Unsufficient cash, please enter adequate cash amount!');
     } else if (cashAmt === billAmt) {
         alert('No Change!');
     } else {
+        loader.className = "show";
+        // returnChange.className = "hide";
+        setTimeout(function() {
+            loader.className = loader.className.replace("show", "");
+            returnChange.className = output.className.replace("", "show")
+        }, 1000);
         let returnAmount = parseInt(cashAmt) - parseInt(billAmt);
         console.log(returnAmount);
 

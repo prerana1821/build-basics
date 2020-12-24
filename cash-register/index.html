@@ -5,73 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 
-    <header>
-        <div>preCodes</div>
-        <ul>
-            <li>linkedin</li>
-            <li>gmail</li>
-            <li>insta</li>
-            <li>twitter</li>
-            <li>github</li>
+    <header id="header">
+        <div id="logo">pre<span>Codes</span></div>
+        <ul class="inline-list">
+            <li>
+                <a class="links" href="mailto: prerananw1@gmail.com"><img src="images/gmail.svg" alt=""></a>
+            </li>
+
+            <li>
+                <a class="links" href="https://github.com/prerana1821"><img src="images/github.svg" alt=""></a>
+            </li>
+            <li>
+                <a class="links" href="https://twitter.com/NawarPrerana"><img src="images/twitter.svg" alt=""></a>
+            </li>
+            <li>
+                <a class="links" href="https://www.instagram.com/_prer.ana_/"><img src="images/instagram.svg" alt=""></a>
+            </li>
+            <li>
+                <a class="links" href="https://www.linkedin.com/in/prerana-nawar-4890b41ab/"><img src="images/linkedin.svg" alt=""></a>
+            </li>
+
         </ul>
     </header>
 
     <section>
-        <div>
-            <img src="" alt="">
+        <div id="left-div">
+            <img src="images/hero.png" alt="">
         </div>
 
-        <div>
+        <div id="right-div">
             <h1>Cash Register</h1>
+            <!-- <p>You have to enter the bill amount and cash given by the customer and you can know minimum number of notes to return.</p> -->
             <div>
-                <input type="number" name="" id="bill-amt">
-                <button>Next</button>
+                <input class="input" placeholder="Enter Bill amount" type="number" name="" id="bill-amt">
+                <button class="btns" id="btn-next">Next</button>
             </div>
-            <div>
-                <input type="number" name="" id="cash">
-                <button id="btn-check">Check</button>
+            <div id="cash-div">
+                <input class="input" placeholder="Enter Cash amount" type="number" name="" id="cash">
+                <button class="btns" id="btn-check">Check</button>
             </div>
+            <div id="loading"><img src="images/loading.svg" alt=""></div>
             <div class="changeReturn">
                 <div class="label">Return Change:</div>
                 <div id="output">
-                    <table>
-                        <tr>
-                            <th>No.of Notes</td>
-                                <th>Note</td>
-                        </tr>
-                        <tr>
-                            <td>2000</td>
-                            <td class="noOfNotes"></td>
-                        </tr>
-                        <tr>
-                            <td>500</td>
-                            <td class="noOfNotes"></td>
-                        </tr>
-                        <tr>
-                            <td>100</td>
-                            <td class="noOfNotes"></td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td class="noOfNotes"></td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td class="noOfNotes"></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td class="noOfNotes"></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="noOfNotes"></td>
-                        </tr>
+                    <table class="styled-table bordered">
+                        <thead>
+                            <tr>
+                                <th>No.of Notes</td>
+                                    <th>Note</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="active-row">
+                                <td>2000</td>
+                                <td class="noOfNotes"></td>
+                            </tr>
+                            <tr>
+                                <td>500</td>
+                                <td class="noOfNotes"></td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="noOfNotes"></td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td class="noOfNotes"></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td class="noOfNotes"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td class="noOfNotes"></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="noOfNotes"></td>
+                            </tr>
+                        </tbody>
+
                     </table>
                 </div>
             </div>
