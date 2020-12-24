@@ -29,6 +29,19 @@ btn.addEventListener('click', function() {
         // console.log('Hello');
         let nearestDate = nearestPalindromeNum(dateFormats[0]);
         console.log(nearestDate);
+        setTimeout(function() {
+            loader.className = loader.className.replace("show", "");
+            output.className = output.className.replace("hide", "")
+        }, 1000);
+        let dateTemp1 = `${nearestDate.slice(0, 4)}-${nearestDate.slice(4, 6)}-${nearestDate.slice(6, 8)}`;
+        let date1 = new Date(birthDate.value);
+        let date2 = new Date(dateTemp1);
+        let diffTime = Math.abs(date2 - date1);
+        let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        console.log(diffDays + " days");
+        output.innerText = `Sorry, your birthdate is not a palindrome date but the nearest paindrome date is ${dateTemp1}. 
+        You are ${diffDays} ahead of it!
+        `;
     }
 });
 
@@ -44,11 +57,12 @@ function nearestPalindromeNum(num) {
     // console.log(sum);
     // console.log(sum.slice(4, 6));
     // console.log(sum.slice(6, 8));
-    if (sum.slice(4, 6) <= 12 && sum.slice(6, 8) <= 31) {
-        return sum;
-    } else {
-        nearestPalindromeNum(sum);
-    }
+    // if (sum.slice(4, 6) <= 12 && sum.slice(6, 8) <= 31) {
+    //     return sum;
+    // } else {
+    //     nearestPalindromeNum(sum);
+    // }
+    return sum;
     // return +(first + reversed);
     // validate(first + reversed);
 }
@@ -67,57 +81,9 @@ function validate(date) {
     } else {
         console.log('Hii');
         console.log(date);
+
     }
 }
-
-// console.log(findNearestPalindrome('20170723'));
-
-//YYYY-MM-DD
-// function nearestPalindromeNum(num) {
-//     // console.log(num);
-//     let low = num - 1;
-//     while (!palindromeNum(low)) {
-//         low = low - 1;
-//     }
-//     // console.log(low);
-
-//     let high = parseInt(num) + 1;
-//     while (!palindromeNum(high)) {
-//         high = high + 1;
-//     }
-//     // console.log(high);
-
-//     // dhigh = new Date(high);
-//     // console.log(dhigh.isValid());
-//     // console.log(high.getDate());
-
-//     if (low < high) {
-//         // console.log(low);
-//         validate(low);
-//         // return low;
-//     } else {
-//         // console.log(high);
-//         // return high;
-//         validate(high);
-
-//     }
-// }
-
-// let dateTemp1 = `${low[0].slice(0, 4)}/${low[0].slice(4, 6)}/${low[0].slice(6, 8)}`;
-// console.log(dateTemp1);
-
-// let isValidDate = Date.parse('1980/02/29');
-
-// let isValidDate = Date.parse('2016/61/02');
-// if (isNaN(isValidDate)) {
-//     // when is not valid date logic
-//     // return false;
-//     console.log('Hello');
-// } else {
-//     console.log('Hii');
-// }
-
-// console.log(palindromeNum(123021));
 
 function palindromeNum(number) {
     let reverse = 0;
@@ -183,3 +149,51 @@ reset.addEventListener('click', function() {
     birthDate.value = '';
     output.innerText = '';
 });
+
+// console.log(findNearestPalindrome('20170723'));
+
+//YYYY-MM-DD
+// function nearestPalindromeNum(num) {
+//     // console.log(num);
+//     let low = num - 1;
+//     while (!palindromeNum(low)) {
+//         low = low - 1;
+//     }
+//     // console.log(low);
+
+//     let high = parseInt(num) + 1;
+//     while (!palindromeNum(high)) {
+//         high = high + 1;
+//     }
+//     // console.log(high);
+
+//     // dhigh = new Date(high);
+//     // console.log(dhigh.isValid());
+//     // console.log(high.getDate());
+
+//     if (low < high) {
+//         // console.log(low);
+//         validate(low);
+//         // return low;
+//     } else {
+//         // console.log(high);
+//         // return high;
+//         validate(high);
+
+//     }
+// }
+
+// let dateTemp1 = `${low[0].slice(0, 4)}/${low[0].slice(4, 6)}/${low[0].slice(6, 8)}`;
+// console.log(dateTemp1);
+
+// let isValidDate = Date.parse('1980/02/29');
+// let isValidDate = Date.parse('2016/61/02');
+// if (isNaN(isValidDate)) {
+//     // when is not valid date logic
+//     // return false;
+//     console.log('Hello');
+// } else {
+//     console.log('Hii');
+// }
+
+// console.log(palindromeNum(123021));
