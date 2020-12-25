@@ -5,6 +5,7 @@ const loader = document.querySelector('#loading');
 const reset = document.querySelector('#reset');
 
 let dateFormats;
+// 2020/03/18 20200318
 btn.addEventListener('click', function() {
     // console.log(birthDate.value);
     dateFormats = dateFormat(birthDate.value);
@@ -19,7 +20,7 @@ btn.addEventListener('click', function() {
             output.className = "hide";
             setTimeout(function() {
                 loader.className = loader.className.replace("show", "");
-                output.className = output.className.replace("hide", "")
+                output.className = output.className.replace("hide", "");
             }, 1000);
             console.log('Palindrome');
             output.innerText = 'Congralulations! \n Your Birthdate is a Palindrome Date🎉🔥';
@@ -45,24 +46,28 @@ btn.addEventListener('click', function() {
     }
 });
 
+// YYYY - MM - DD
+// /2020 0202
 
 function nearestPalindromeNum(num) {
     const strNum = String(num);
     const half = strNum.substring(0, Math.floor(strNum.length / 2));
     const reversed = half.split("").reverse().join("");
     const first = strNum.length % 2 === 0 ? half : strNum.substring(0,
-        Math.ceil(strNum.length / 2))
+        Math.ceil(strNum.length / 2));
 
     let sum = first + reversed;
     // console.log(sum);
     // console.log(sum.slice(4, 6));
     // console.log(sum.slice(6, 8));
+    //sum = 20206102
+    // sum 20208190
     if (sum.slice(4, 6) <= 12 && sum.slice(6, 8) <= 31) {
         return sum;
     } else {
         nearestPalindromeNum(sum);
     }
-    // return sum;
+    return sum;
     // return +(first + reversed);
     // validate(first + reversed);
 }
@@ -81,7 +86,6 @@ function validate(date) {
     } else {
         console.log('Hii');
         console.log(date);
-
     }
 }
 
@@ -152,6 +156,10 @@ reset.addEventListener('click', function() {
 
 // console.log(findNearestPalindrome('20170723'));
 
+
+// 122
+// // 123
+// 124
 //YYYY-MM-DD
 // function nearestPalindromeNum(num) {
 //     // console.log(num);
@@ -179,7 +187,6 @@ reset.addEventListener('click', function() {
 //         // console.log(high);
 //         // return high;
 //         validate(high);
-
 //     }
 // }
 

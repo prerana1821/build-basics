@@ -9,30 +9,36 @@ const loader = document.querySelector('#loading');
 
 let notes = [2000, 500, 100, 20, 10, 5, 1];
 let returnNotes = [];
-let billAmt;
-let cashAmt;
+//  billAmt;
+// let cashAmt;
 btnNext.addEventListener('click', function() {
     // loader.className = "show";
-    billAmt = bill.value;
-    if (billAmt === '') {
-        alert('Please, Enter Billing Amount!');
-    } else {
-        checkDiv.className = "show";
-    }
+    // billAmt = bill.value;
+    // if (billAmt === '') {
+    //     alert('Please, Enter Billing Amount!');
+    // } else {
+    checkDiv.className = "show";
+    // }
 })
 
 btnCheck.addEventListener('click', function() {
-    billAmt = bill.value;
-    cashAmt = cash.value;
+    let billAmt = bill.value;
+    let cashAmt = cash.value;
     for (const notes of noOfNotes) {
         notes.innerText = '';
+        // billAmt.value = '';
+        // cashAmt.value = '';
     }
 
+    console.log(billAmt);
+    console.log(cashAmt);
     if (billAmt === '') {
         alert('Please, Enter Billing Amount!');
     } else if (cashAmt === '') {
         alert('Please, Enter Cash Amount!');
     } else if (billAmt > cashAmt) {
+        // console.log(billAmt);
+        // console.log(cashAmt);
         alert('Unsufficient cash, please enter adequate cash amount!');
     } else if (cashAmt === billAmt) {
         alert('No Change!');
@@ -41,7 +47,7 @@ btnCheck.addEventListener('click', function() {
         // returnChange.className = "hide";
         setTimeout(function() {
             loader.className = loader.className.replace("show", "");
-            returnChange.className = output.className.replace("", "show")
+            returnChange.className = output.className.replace("", "show");
         }, 1000);
         let returnAmount = parseInt(cashAmt) - parseInt(billAmt);
         console.log(returnAmount);
