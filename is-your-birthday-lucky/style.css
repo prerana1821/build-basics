@@ -22,7 +22,9 @@
         margin: 4rem 10% 4rem 10%;
         height: 80vh;
         background-color: #ffffff66;
-        box-shadow: 3px 8px 15px #D9DADE, -10px -8px 15px #FFFFFF
+        box-shadow: 3px 8px 15px #D9DADE, -10px -8px 15px #FFFFFF;
+        backdrop-filter: blur(3rem);
+        border-radius: 1rem;
     }
     
     #left-div {
