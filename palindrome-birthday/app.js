@@ -28,8 +28,14 @@ btn.addEventListener('click', function() {
     }
     if (result === 0) {
         // console.log('Hello');
-        let nearestDate = nearestPalindromeNum(dateFormats[0]);
-        console.log(nearestDate);
+        let near = 0;
+        for (let i = 0; i < dateFormats.length; i++) {
+            let nearestDate = nearestPalindromeNum(dateFormats[i]);
+            if (nearestDate) {
+                console.log(nearestDate);
+            }
+        }
+        // console.log(nearestDate);
         setTimeout(function() {
             loader.className = loader.className.replace("show", "");
             output.className = output.className.replace("hide", "")
@@ -64,10 +70,11 @@ function nearestPalindromeNum(num) {
     // sum 20208190
     if (sum.slice(4, 6) <= 12 && sum.slice(6, 8) <= 31) {
         return sum;
-    } else {
-        nearestPalindromeNum(sum);
     }
-    return sum;
+    // } else {
+    //     nearestPalindromeNum(sum);
+    // }
+    // return sum;
     // return +(first + reversed);
     // validate(first + reversed);
 }

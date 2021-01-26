@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;400&display=swap'); */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 * {
     padding: 0;
@@ -7,8 +8,8 @@
 }
 
 body {
-    /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
     background: rgb(229, 51, 141);
     background: linear-gradient(126deg, rgba(229, 51, 141, 1) 13%, rgba(164, 25, 142, 1) 38%, rgba(28, 16, 90, 1) 64%, rgba(25, 16, 79, 1) 84%);
     background-repeat: no-repeat;

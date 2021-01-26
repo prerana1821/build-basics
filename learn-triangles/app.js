@@ -46,15 +46,15 @@ generateAngles.addEventListener('click', function() {
 })
 
 
-function count_of_ways(n) {
-    let count = 0;
-    for (let i = 0; i <= n; i++)
-        for (let j = 0; j <= n; j++)
-            for (let k = 0; k <= n; k++)
-                if (i + j + k === n)
-                    count++;
-    return count;
-}
+// function count_of_ways(n) {
+//     let count = 0;
+//     for (let i = 0; i <= n; i++)
+//         for (let j = 0; j <= n; j++)
+//             for (let k = 0; k <= n; k++)
+//                 if (i + j + k === n)
+//                     count++;
+//     return count;
+// }
 
-let angles = count_of_ways(180);
-console.log(angles);
+// let angles = count_of_ways(180);
+// console.log(angles);
